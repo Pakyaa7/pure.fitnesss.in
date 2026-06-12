@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pure Fitness</title>
+    <link rel="stylesheet" href="Home.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo-area">
+<a href="https://www.instagram.com/pakya7___?igsh=MThzY3Q4OWMxYWt1OA==">
+        <img src="purescreen.png" class="hedpic">
+</a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <h1>Pure Fitness</h1>
+    </div>
+<div class="welcome"> <marquee> 🏃‍♂️💪 Your Journey to a Stronger You Starts Here  🏃‍♂️💪</marquee> </div>
+    <nav>
+        <ul>
+            <li>
+    <a href="#">
+       <ul class="navbar">
+    <li><a href="purehome.html"><i class="fa-solid fa-house"></i> HOME</a></li>
+    <li><a href="yoga.html"><i class="fa-solid fa-spa"></i> YOGA</a></li>
+    <li><a href="gym.html"><i class="fa-solid fa-dumbbell"></i> GYM</a></li>
+    <li><a href="trainerss.html"><i class="fa-solid fa-user-group"></i> TRAINERS</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-phone"></i> CONTACT</a></li>
+
+   <li class="login">
+    <a href="#" id="loginBtn">
+        <i class="fa-solid fa-user"></i> LOGIN
+    </a>
+</li>
+
+
+</ul>
+    </nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</header>
+ <video autoplay muted loop class="bg-video">
+        <source src="home page videos.mp4" type="video/mp4">
+    </video>
+
+
+<!-- SWEET ALERT CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+let time = new Date().getHours();
+
+let greeting = "";
+let icon = "success";
+
+if(time >= 5 && time < 12){
+
+    greeting = "☀️ Good Morning Champion 💪";
+
+}
+
+else if(time >= 12 && time < 17){
+
+    greeting = "🌤️ Good Afternoon Stay Strong 💪";
+
+}
+
+else if(time >= 17 && time < 21){
+
+    greeting = "🌇 Good Evening Workout Time 🏋️";
+
+}
+
+else{
+
+    greeting = "🌙 Good Night Rest Well Champion 💪";
+
+}
+
+Swal.fire({
+
+    title: greeting,
+
+    text: "Welcome To Pure Fitness 🔥",
+
+    icon: icon,
+
+    background: "#1e1e2f",
+
+    color: "#fff",
+
+    confirmButtonText: "Let's Go 🚀",
+
+    confirmButtonColor: "#ff0080",
+
+    timer: 4000,
+
+    timerProgressBar: true,
+
+    backdrop: `
+    
+    rgba(0,0,0,0.7)
+
+    `,
+
+    showClass: {
+
+        popup: `
+            animate__animated
+            animate__zoomIn
+        `
+    },
+
+    hideClass: {
+
+        popup: `
+            animate__animated
+            animate__zoomOut
+        `
+    }
+
+});
+
+</script>
+
+
+
+
+
+
+
+<section class="hero"> 
+
+
+
+    <div class="hero-content">
+
+        <h2>Transform Your Body</h2>
+<div class="fitness-info">
+
+    <h3>🏋️ Gym: Strength and Cardiovascular Health</h3> <br>
+    <h3>🧘 Yoga: Flexibility and Holistic Wellness</h3>
+
+</div>
+</section>
+
+<section class="ambassador-section">
+
+    <h1 class="section-title">🏋️‍♂️ Gym Ambassador</h1>
+    <h2 class="ambassador-name">RONNIE COLEMAN</h2>
+
+    <div class="ambassador-gallery">
+        <img class="trainer" src="gym trainer.png">
+        <img class="trainer" src="gym trainer2.png">
+        <img class="trainer" src="gym trainer3.png">
+    </div>
+
+</section>  
+
+<section class="video-section">
+
+    <h1 class="section-titlee">🏋️ Ronnie Coleman Training Videos</h1>
+
+    <div class="video-gallery">
+
+        <video autoplay muted loop class="trainer-video">
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop class="trainer-video">
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop class="trainer-video">
+            <source src="video3.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</section>
+
+<section class="ambassador-section yoga">
+
+    <h1 class="section-title">🧘‍♂️ Yoga Ambassador</h1>
+    <h2 class="ambassador-name">RAMDEV BABA</h2>
+
+    <div class="ambassador-gallery">
+        <img class="trainer" src="ramdev.png">
+        <img class="trainer" src="ramdev2.png">
+        <img class="trainer" src="ramdev3.webp">
+    </div>
+<section class="video-section">
+
+    <h1 class="section-titlee">🏋️ ramdev baba yoga Videos</h1>
+
+    <div class="video-gallery">
+
+        <video autoplay muted loop class="trainer-video">
+            <source src="video yoga1.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop class="trainer-video">
+            <source src="video yoga2.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop class="trainer-video">
+            <source src="video yoga3.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+
+<a href="purehome.html">
+<input type="button" value="Back" class="back">    </button>
+</a>
+
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-section">
+            <h3>Pure Fitness</h3>
+            <p>Empowering your fitness journey through strength training and yoga. Stay fit, stay strong, stay balanced.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="purehome.html">Home</a></li>
+                <li><a href="yoga.html">Yoga</a></li>
+                <li><a href="gym.html">Gym</a></li>
+                <li><a href="\About.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>📍 Desaiganj wadsa, India</p>
+            <p>📞 +91 77688 91418</p>
+            <p>📧 purefitness@gmail.com</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <p>
+                <a href="https://www.instagram.com/pakya7___?igsh=MThzY3Q4OWMxYWt1OA==">Instagram</a> | 
+                <a href="https://www.facebook.com/share/18j6hBWp1Y/">Facebook</a> | 
+                <a href="https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-6/651283143_1431038912371560_3206830652399286575_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=fZj97aqNfrQQ7kNvwE7WeQ9&_nc_oc=Adri73_mjirVAXsRPhwXtrcm4NLlISrp3ufgRfxuxL1yBjGxqK8zMneqEbbL-O3zjak&_nc_zt=23&_nc_ht=scontent-bom5-2.xx&_nc_gid=qFnbBQnSv-2PzJwr3Sn8xA&_nc_ss=7b289&oh=00_Af7Vjgln4BE_5XDCr7z1BPznts1UvDQmwCO3_lyltPcZVw&oe=6A01F159">YouTube</a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Pure Fitness | All Rights Reserved 💪🧘‍♂️</p>
+    </div>
+</footer>
+
+</body>
+<script>
+let user = localStorage.getItem("username");
+
+if(user){
+    document.getElementById("loginBtn").innerHTML = 
+    '<i class="fa-solid fa-user"></i> ' + user;
+}
+</script>
+</html>
