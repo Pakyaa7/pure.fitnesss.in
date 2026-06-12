@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Pure Fitness</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo-area">
+        <a href="https://www.instagram.com/pakya7___?igsh=MThzY3Q4OWMxYWt1OA==">
+            <img src="purescreen.png" class="hedpic">
+        </a>
+        <h1>Pure Fitness</h1>
+    </div>
+
+   
+
+    <nav>
+        <ul>
+            <li><a href="purehome.html">HOME</a></li>
+            <li><a href="yoga.html">YOGA</a></li>
+            <li><a href="gym.html">GYM</a></li>
+            <li><a href="trainerss.html"> TRAINERS </a> </li>
+            <li><a href="About.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="about-hero">
+
+    <div class="hero-content">
+        <h1>🏋️‍♂️About Pure Fitness 🏋️‍♂️</h1>
+
+        <p>
+            Fitness is not only about muscles, it's about confidence,
+            discipline, peace and a healthy lifestyle.
+        </p>
+    </div>
+
+</section>
+
+
+
+<!-- MODERATOR SECTION -->
+<section class="moderator-section">
+
+    <h1 class="section-title">Our Management Team</h1>
+
+    <div class="moderator-container">
+
+        <!-- MODERATOR -->
+        <div class="moderator-card">
+
+  <img src="bodybuilder pkyaa.png" alt="Moderator">
+
+
+            <h2>Prakhil Bhowate</h2>
+
+            <p class="pakyaa">Main Moderator</p>
+
+            <p class="sub">
+                Handles website management, community support,
+                and maintains discipline in Pure Fitness.
+            </p>
+
+        </div>
+
+        <!-- SUB MODERATOR -->
+        <div class="moderator-card">
+
+            <img src="sahil1.png"alt="Sub Moderator">
+
+            <h2>Sahil Kalsarpe</h2>
+
+            <p class="role">Sub Moderator</p>
+
+            <p class="sub">
+                Assists members, manages fitness updates,
+                and supports daily activities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- FEATURES -->
+<section class="features">
+
+    <h1 class="section-title">Why Choose Pure Fitness?</h1>
+
+    <div class="feature-container">
+
+        <div class="feature-box">
+            <h2>🏋️ Gym Training</h2>
+            <p>
+                Build muscles, increase strength and improve your
+                overall fitness with modern workout plans.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <h2>🧘 Yoga Practice</h2>
+            <p>
+                Improve flexibility, breathing and mental peace
+                with daily yoga sessions.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <h2>🔥 Motivation</h2>
+            <p>
+                Stay motivated and consistent on your fitness journey
+                with Pure Fitness.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<h2 class="member-title">💬 What Our Members Say</h2>
+
+<div class="feedback-btn-container">
+    <a href="feedback.html" class="feedback-btn">
+        ➕ Add Feedback
+    </a>
+</div>
+
+
+
+<div id="feedbackList"></div>
+
+<script>
+let feedbacks = JSON.parse(localStorage.getItem("gymFeedbacks")) || [];
+
+const feedbackList = document.getElementById("feedbackList");
+
+displayFeedbacks();
+
+function displayFeedbacks(){
+
+    feedbackList.innerHTML = "";
+
+    feedbacks.forEach((item,index) => {
+
+        feedbackList.innerHTML += `
+        <div class="feedback-card">
+            <h3>${item.name}</h3>
+            <p>${item.feedback}</p>
+            <span>${item.rating}</span>
+            <br><br>
+
+            <button onclick="deleteFeedback(${index})">
+                🗑 Delete
+            </button>
+        </div>
+        `;
+    });
+}
+
+function deleteFeedback(index){
+
+    let password = prompt("Enter Admin Password:");
+
+    if(password === "pakyaa123"){
+
+        feedbacks.splice(index,1);
+
+        localStorage.setItem(
+            "gymFeedbacks",
+            JSON.stringify(feedbacks)
+        );
+
+        alert("Feedback Deleted Successfully!");
+
+        displayFeedbacks();
+
+    }else{
+
+        alert("Wrong Password!");
+
+    }
+}
+</script>
+
+<script>
+
+function openFeedbackPopup(){
+    document.getElementById("feedbackPopup").style.display = "flex";
+}
+
+function closeFeedbackPopup(){
+    document.getElementById("feedbackPopup").style.display = "none";
+}
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const feedbackData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        rating: document.getElementById("rating").value,
+        feedback: document.getElementById("feedback").value,
+        date: new Date().toLocaleString()
+    };
+
+    let feedbacks =
+    JSON.parse(localStorage.getItem("gymFeedbacks")) || [];
+
+    feedbacks.push(feedbackData);
+
+    localStorage.setItem(
+        "gymFeedbacks",
+        JSON.stringify(feedbacks)
+    );
+
+    alert("Thank You For Your Feedback!");
+
+    location.reload();
+});
+
+</script>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Pure Fitness</h3>
+
+            <p>
+                Empowering your fitness journey through
+                gym workouts and yoga.
+            </p>
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="purehome.html">Home</a></li>
+                <li><a href="yoga.html">Yoga</a></li>
+                <li><a href="gym.html">Gym</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact</h3>
+
+            <p>📍 Desaiganj Wadsa, India</p>
+            <p>📞 +91 77688 91418</p>
+            <p>📧 purefitness@gmail.com</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Pure Fitness | All Rights Reserved 💪</p>
+    </div>
+
+</footer>
+
+</div>
+</body>
+</html>
