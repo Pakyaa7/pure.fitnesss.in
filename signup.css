@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+
+    /* Background Image */
+    background: url('gallery6.png') no-repeat center/cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DARK OVERLAY */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: 0;
+}
+
+/* CONTAINER */
+.signup-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* BOX */
+.signup-box {
+    background: rgba(0,0,0,0.9);
+    padding: 40px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 25px #d0c3ba;
+}
+
+/* TITLE */
+.signup-box h2 {
+    color: #96f5f9;
+    margin-bottom: 10px;
+    font-family:Castellar;
+}
+
+/* SUBTEXT */
+.signup-box p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* INPUT FIELDS */
+.signup-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: #333;
+    color: white;
+}
+
+/* INPUT FOCUS */
+.signup-box input:focus {
+    box-shadow: 0 0 20px #96f5f9;
+}
+
+/* BUTTON */
+.signup-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, red, orange);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.signup-box button:hover {
+    transform: scale(1.05);
+      box-shadow: 0 0 20px  #96f5f9;
+}
+
+/* LINKS */
+.extra {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.extra a {
+    color: #ff3c00;
+    text-decoration: none;
+}
+
+.extra a:hover {
+    text-decoration: underline;
+}
