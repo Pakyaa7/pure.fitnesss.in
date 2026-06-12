@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Fitness Feedback</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("gym-bg.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.feedback-box{
+    width:90%;
+    max-width:600px;
+    padding:35px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    color:white;
+}
+
+.feedback-box h1{
+    text-align:center;
+    color:#ff9800;
+    margin-bottom:10px;
+}
+
+.feedback-box p{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#ff9800;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e68900;
+}
+
+/* Popup */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:320px;
+    display:none;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+.popup h2{
+    color:green;
+    margin-bottom:10px;
+}
+
+.popup button{
+    margin-top:15px;
+    width:auto;
+    padding:10px 20px;
+}
+</style>
+</head>
+
+
+<body>
+
+
+
+<div class="feedback-box">
+    <h1>Member Feedback</h1>
+    <p>Share your experience with Pure Fitness</p>
+
+    <form id="feedbackForm">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Rating</label>
+            <select id="rating">
+                <option>⭐⭐⭐⭐⭐ Excellent</option>
+                <option>⭐⭐⭐⭐ Very Good</option>
+                <option>⭐⭐⭐ Good</option>
+                <option>⭐⭐ Average</option>
+                <option>⭐ Poor</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Your Feedback</label>
+            <textarea id="feedback" required></textarea>
+        </div>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <h2>Thank You! 🎉</h2>
+    <p>Your feedback has been submitted successfully.</p>
+    <button onclick="closePopup()">OK</button>
+
+
+
+<script>
+const form = document.getElementById("feedbackForm");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const feedbackData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        rating: document.getElementById("rating").value,
+        feedback: document.getElementById("feedback").value,
+        date: new Date().toLocaleString()
+    };
+
+    let feedbacks =
+    JSON.parse(localStorage.getItem("gymFeedbacks")) || [];
+
+    feedbacks.push(feedbackData);
+
+    localStorage.setItem(
+        "gymFeedbacks",
+        JSON.stringify(feedbacks)
+    );
+
+    popup.style.display = "block";
+
+    form.reset();
+});
+
+function closePopup(){
+    window.location.href = "About.html";
+}
+</script>
+
+</body>
+</html>
